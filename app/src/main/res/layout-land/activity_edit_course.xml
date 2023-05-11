@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD600"
+    tools:context=".ui.EditCourseActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_courses_tb"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="Edit Courses"
+        app:titleTextColor="@color/white" />
+
+    <Spinner
+        android:id="@+id/activity_edit_course_spinner"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_edit_course_name_tf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/activity_edit_course_name_tf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Course Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#001AAF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_course_spinner" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_course_name_tf">
+
+        <EditText
+            android:id="@+id/activity_edit_course_startdate_tf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Course Start Date"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textColor="#001AAF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/activity_edit_course_startdate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12sp"
+            android:backgroundTint="#2962FF"
+            android:text="Start Date" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+        <EditText
+            android:id="@+id/activity_edit_course_enddate_tf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Course End Date"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textColor="#001AAF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/activity_edit_course_enddate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12sp"
+            android:backgroundTint="#2962FF"
+            android:text="End Date" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+        <Button
+            android:id="@+id/activity_edit_course_save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2962FF"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/activity_edit_course_remove_course_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12sp"
+            android:backgroundTint="#2962FF"
+            android:text="Remove Course" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

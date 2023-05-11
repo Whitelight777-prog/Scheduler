@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD600"
+    tools:context=".ui.DetailedInstructorActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/instructor_tb"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="Instructor"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/detailed_instructor_instructor_name_tf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/instructor_name"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructor_tb" />
+
+    <EditText
+        android:id="@+id/detailed_instructor_view_phone_tf"
+        android:layout_width="374dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_phone_number"
+        android:inputType="phone"
+        android:textAlignment="center"
+        android:textColor="#001AAF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/email"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailed_instructor_view_phone_tf" />
+
+    <EditText
+        android:id="@+id/detailed_instructor_view_email_tf"
+        android:layout_width="374dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColor="#001AAF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/phone"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructor_instr_name" />
+
+    <EditText
+        android:id="@+id/instructor_instr_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/instructor_name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailed_instructor_instructor_name_tf"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/instructor_save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#2962FF"
+        android:text="Save"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailed_instructor_view_email_tf" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">AndroidStudioProject - Tom Roche</string>
+    <string name="title_activity_terms">Terms</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <integer name="channel_id">4123857</integer>
+    <string name="course_lbl">Course</string>
+    <string name="assessment_name_lbl">Assessment</string>
+    <string name="start_date_lbl">Start Date</string>
+    <string name="end_date_lbl">End Date</string>
+    <string name="title_activity_blah">blah</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="course">Course</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="instructor_name">Instructor Name</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="edit_add">Edit/Add</string>
+    <string name="registered_terms_select_a_term_from_the_list_or_click_edit_add_to_add_a_term">Registered Terms Select a Term from the list or click EDIT/ADD to add a Term.</string>
+    <string name="performance">Performance</string>
+    <string name="objective">Objective</string>
+</resources>

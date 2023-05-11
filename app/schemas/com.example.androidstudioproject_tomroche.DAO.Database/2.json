@@ -1,0 +1,246 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "73077b1a1a39f4dc5fd90c4252764423",
+    "entities": [
+      {
+        "tableName": "terms",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `start_date` TEXT, `end_date` TEXT, `termId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "start_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "end_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "termId",
+            "columnName": "termId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "termId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "courses",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `start_date` TEXT, `end_date` TEXT, `courseId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `status` TEXT, `notes` TEXT, `termId` INTEGER NOT NULL, FOREIGN KEY(`termId`) REFERENCES `terms`(`termId`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "start_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "end_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "courseId",
+            "columnName": "courseId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "termId",
+            "columnName": "termId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "courseId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_courses_termId",
+            "unique": false,
+            "columnNames": [
+              "termId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_courses_termId` ON `${TABLE_NAME}` (`termId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "terms",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "termId"
+            ],
+            "referencedColumns": [
+              "termId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "assessments",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `start_date` TEXT, `end_date` TEXT, `assId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `courseId` INTEGER NOT NULL, `assessmentType` TEXT, FOREIGN KEY(`courseId`) REFERENCES `courses`(`courseId`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "start_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "end_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "assId",
+            "columnName": "assId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "courseId",
+            "columnName": "courseId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assessmentType",
+            "columnName": "assessmentType",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "assId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_assessments_courseId",
+            "unique": false,
+            "columnNames": [
+              "courseId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_assessments_courseId` ON `${TABLE_NAME}` (`courseId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "courses",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "courseId"
+            ],
+            "referencedColumns": [
+              "courseId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "instructors",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `phone` TEXT, `email` TEXT, `instructorId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `courseId` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "phone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "instructorId",
+            "columnName": "instructorId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "courseId",
+            "columnName": "courseId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "instructorId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '73077b1a1a39f4dc5fd90c4252764423')"
+    ]
+  }
+}

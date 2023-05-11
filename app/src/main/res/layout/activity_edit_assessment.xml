@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD600"
+    app:layout_constraintWidth_min="400dp"
+    tools:context=".ui.EditAssessmentActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout16"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_assessment_name_tf">
+
+        <RadioGroup
+            android:id="@+id/test_type_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+<!--            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">-->
+
+                <RadioButton
+                    android:id="@+id/edit_assessment_performance_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Performance"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <RadioButton
+                    android:id="@+id/edit_assessment_objective_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Objective"
+                    tools:ignore="TouchTargetSizeCheck" />
+<!--            </LinearLayout>-->
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_assessment_tb"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="Edit Assessments"
+        app:titleTextColor="@color/white" />
+
+    <Spinner
+        android:id="@+id/activity_edit_assessment_spinner"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_edit_assessment_name_tf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_assessment_name_tf"
+        app:layout_constraintWidth_max="400dp"
+        app:layout_constraintWidth_min="300dp">
+
+        <EditText
+            android:id="@+id/activity_edit_assessment_startdate_tf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Select Assmnt Start Date"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#001AAF"
+            android:textSize="20sp"
+            tools:ignore="SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="397dp" />
+
+        <Button
+            android:id="@+id/activity_edit_assessment_startdate_btn"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2962FF"
+            android:text="Start Date"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="399dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintWidth_max="400dp"
+        app:layout_constraintWidth_min="300dp">
+
+        <EditText
+            android:id="@+id/activity_edit_assessment_enddate_tf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Select Assmnt End Date"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#001AAF"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="527dp" />
+
+        <Button
+            android:id="@+id/activity_edit_assessment_enddate_btn"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2962FF"
+            android:text="End Date"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="288dp"
+            tools:layout_editor_absoluteY="529dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+
+        <Button
+            android:id="@+id/activity_edit_assessment_update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FF6D00"
+            android:text="UPDATE" />
+
+        <Button
+            android:id="@+id/activity_edit_assessment_add_assmnt_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:backgroundTint="#2962FF"
+            android:text="Save"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="65dp"
+            tools:layout_editor_absoluteY="657dp" />
+
+        <Button
+            android:id="@+id/activity_edit_assessment_remove_assmnt_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2962FF"
+            android:text="Remove Assessment"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="166dp"
+            tools:layout_editor_absoluteY="657dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Enter assessment name including type of assessment (i.e. Performance, Objective, etc)  "
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_edit_assessment_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_assessment_tb"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <EditText
+        android:id="@+id/activity_edit_assessment_name_tf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Assessment Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#001AAF"
+        android:textColorHighlight="@color/black"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_assessment_spinner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
